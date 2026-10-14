@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <!-- Fondamentale per IE11: forza il rendering corretto ed evita la modalità compatibilità vecchia -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sito Compatibile IE11 (File Unico)</title>
+    <style>
+        /* Un minimo di stile CSS compatibile con i vecchi browser */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sito Web Monopagina per IE11</h1>
+    <p>Questo sito contiene sia la struttura che la logica in un unico file, ideale per GitHub Pages.</p>
+    
+    <button id="mioPulsante">Cliccami</button>
+    <p id="risultato" style="font-weight: bold; color: green; margin-top: 15px;"></p>
+
+    <!-- Logica JavaScript integrata compatibile con ES5 (IE11) -->
+    <script>
+        // Usiamo 'var' perché 'let' e 'const' bloccano l'esecuzione su IE11
+        var pulsante = document.getElementById('mioPulsante');
+        var risultato = document.getElementById('risultato');
+
+        // Funzione classica (le "arrow functions" => non sono supportate)
+        pulsante.addEventListener('click', function() {
+            risultato.innerHTML = 'Funziona! Codice JavaScript eseguito correttamente anche su IE11.';
+        });
+    </script>
+</body>
+</html>
